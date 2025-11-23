@@ -1,0 +1,36 @@
+name: Deploy home-baleine
+
+on:
+  push:
+    branches:
+      - main   # or 'master' or your deployment branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # or whatever version you use
+
+      - name: Install dependencies
+        run: npm ci
+        # or: npm install
+
+      - name: Build static site
+        run: npm run generate
+
+      - name: Deploy via rsync over SSH
+        uses: burnett01/rsync-deployments@v4.1
+        with:
+          switches: -avz --delete
+          path: .output/public/
+          remote_path: /srv/www/home-baleine/
+          remote_host: ${{ secrets.BALEINE_HOST }}
+          remote_user: ${{ secrets.BALEINE_USER }}
+          remote_key: ${{ secrets.BALEINE_SSH_KEY }}
