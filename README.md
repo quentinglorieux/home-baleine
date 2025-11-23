@@ -1,75 +1,15 @@
-# Nuxt Minimal Starter
+# Home baleine
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This repository contains the code for the home page of the Baleine laboratory (LKB) at Sorbonne University.
 
-## Setup
+This is static website built with Nuxt.js and deployed on the VPS baleine.lkb.upmc.fr.
 
-Make sure to install dependencies:
+On baleine, please pull the latest changes from the main branch and then run:
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+``` bash
+npm install                
+npm run generate
+sudo rsync -a .output/public/ /srv/docker/home-baleine/
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This will update the static files served by the web server.
