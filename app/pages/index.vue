@@ -38,7 +38,7 @@
           </div>
 
           <template #footer>
-            <div class="text-sm text-sky-600 break-words">co2.baleine.lkb.upmc.fr</div>
+            <div class="text-sm text-sky-600 wrap-break-word">co2.baleine.lkb.upmc.fr</div>
           </template>
         </UCard>
 
@@ -67,7 +67,7 @@
           </div>
 
           <template #footer>
-            <div class="text-sm text-sky-600 break-words">intranet.baleine.lkb.upmc.fr</div>
+            <div class="text-sm text-sky-600 wrap-break-word">intranet.baleine.lkb.upmc.fr</div>
           </template>
         </UCard>
 
@@ -96,7 +96,37 @@
           </div>
 
           <template #footer>
-            <div class="text-sm text-sky-600 break-words">booking.baleine.lkb.upmc.fr</div>
+            <div class="text-sm text-sky-600 wrap-break-word">booking.baleine.lkb.upmc.fr</div>
+          </template>
+        </UCard>
+
+        <UCard
+          as="a"
+          href="http://wiki.baleine.lkb.upmc.fr/team-demo/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="outline"
+          :ui="{ root: 'cursor-pointer hover:shadow-lg transition transform hover:-translate-y-1 p-6 min-h-[160px]' }"
+        >
+          <template #header>
+            <div class="flex items-center gap-4">
+              <svg class="w-10 h-10 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4h9v12H12z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h9v12H3z" />
+              </svg>
+              <div>
+                <h2 class="text-xl font-medium">Team Wiki</h2>
+              </div>
+            </div>
+          </template>
+
+          <div class="mt-4 text-sm text-gray-700">
+            Wiki pages and documentation for each team in the lab.
+          </div>
+
+          <template #footer>
+            <div class="text-sm text-sky-600 wrap-break-word">wiki.baleine.lkb.upmc.fr/team-demo</div>
           </template>
         </UCard>
       </div>
